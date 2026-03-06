@@ -1,0 +1,266 @@
+HTML 5 = 
+VAR BaseEmpresa =
+    ADDCOLUMNS(
+        SUMMARIZE(
+            '@DADOS',
+            '@DADOS'[EMPRESA]
+        ),
+        "BRUTO", CALCULATE(SUM('@DADOS'[SALARIO]) + SUM('@DADOS'[PJ])),
+        "FUNCI", [$FUNCIONARIOS],
+        "CUSTOS", [$CUSTOS FUNCIONARIOS],
+        "EB", [$ENCARGOS + BENEFICIOS]
+
+    )
+
+VAR BaseMes =
+    FILTER(
+        ADDCOLUMNS(
+            VALUES('@CALENDAR'[MES_ABREV]),
+            "BrutoMes", [$BRUTO],
+            "CustosMes", [$CUSTOS FUNCIONARIOS],
+            "FunciMes", [$FUNCIONARIOS],
+            "EbMes", [$ENCARGOS + BENEFICIOS]
+        ),
+        NOT ISBLANK([BrutoMes])
+            && [BrutoMes] <> 0
+    )
+
+-- =========================
+-- MAIOR GASTO
+-- =========================
+
+VAR TopGasto = TOPN(1, BaseEmpresa, [BRUTO], DESC)
+VAR NomeTopGasto = MAXX(TopGasto, '@DADOS'[EMPRESA])
+VAR ValorTopGasto = MAXX(TopGasto, [BRUTO])
+
+-- =========================
+-- MENOR GASTO
+-- =========================
+
+VAR MenorGasto = TOPN(1, BaseEmpresa, [BRUTO], ASC)
+VAR NomeMenorGasto = MAXX(MenorGasto, '@DADOS'[EMPRESA])
+VAR ValorMenorGasto = MAXX(MenorGasto, [BRUTO])
+
+-- =========================
+-- MAIS FUNCIONÁRIOS
+-- =========================
+
+VAR TopFunc = TOPN(1, BaseEmpresa, [FUNCI], DESC)
+VAR NomeTopFunc = MAXX(TopFunc, '@DADOS'[EMPRESA])
+VAR ValorTopFunc = MAXX(TopFunc, [FUNCI])
+
+-- =========================
+-- MAIOR CUSTOS
+-- =========================
+
+VAR TopCUSTOS = TOPN(1, BaseEmpresa, [CUSTOS], DESC)
+VAR NomeTopCUSTOS = MAXX(TopCUSTOS, '@DADOS'[EMPRESA])
+VAR ValorTopCUSTOS = MAXX(TopCUSTOS, [CUSTOS])
+
+-- =========================
+-- MAIOR EB
+-- =========================
+
+VAR TopEB = TOPN(1, BaseEmpresa, [$ENCARGOS + BENEFICIOS], DESC)
+VAR NomeTopEB = MAXX(TopEB, '@DADOS'[EMPRESA])
+VAR ValorTopEB = MAXX(TopEB, [$ENCARGOS + BENEFICIOS])
+
+-- =========================
+-- MAIOR BRUTO MÊS
+-- =========================
+
+VAR Topbrutomes = TOPN(1, BaseMes, [BrutoMes], DESC)
+VAR NomeTopbrutomes = MAXX(Topbrutomes, '@CALENDAR'[MES_ABREV])
+VAR ValorTopbrutomes = MAXX(Topbrutomes, [BrutoMes])
+
+-- =========================
+-- MENOR BRUTO
+-- =========================
+
+VAR Menorbrutomes = TOPN(1, BaseMes, [BrutoMes], ASC)
+VAR NomeMenorbrutomes = MAXX(Menorbrutomes, '@CALENDAR'[MES_ABREV])
+VAR ValorMenorbrutomes = MAXX(Menorbrutomes, [BrutoMes])
+
+-- =========================
+-- MAIOR FUNCI MÊS
+-- =========================
+
+VAR Topfuncimes = TOPN(1, BaseMes, [FunciMes], DESC)
+VAR NomeTopfuncimes = MAXX(Topfuncimes, '@CALENDAR'[MES_ABREV])
+VAR ValorTopfuncimes = MAXX(Topfuncimes, [FunciMes])
+
+-- =========================
+-- MAIOR CUSTOS MÊS
+-- =========================
+
+VAR Topcustosmes = TOPN(1, BaseMes, [CustosMes], DESC)
+VAR NomeTopcustosmes = MAXX(Topcustosmes, '@CALENDAR'[MES_ABREV])
+VAR ValorTopcustosmes = MAXX(Topcustosmes, [CustosMes])
+
+-- =========================
+-- MAIOR EB MÊS
+-- =========================
+
+VAR Topebm = TOPN(1, BaseMes, [EbMes], DESC)
+VAR NomeTopebm = MAXX(Topebm, '@CALENDAR'[MES_ABREV])
+VAR ValorTopebm = MAXX(Topebm, [EbMes])
+
+RETURN
+
+"
+<style>
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    font-family: Verdana;
+}
+
+.item {
+    background: #e4e4e4;
+    border: 5px solid black;
+    color: black;
+    padding: 20px 30px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    transition: 0.2s ease;
+}
+
+.item:hover {
+    transform: translateX(5px);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo {
+    font-size: 40px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.nome {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.valor {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.black { color: black; }
+
+.section {
+    background: #1b1b1b;
+    color: white;
+    font-size: 50px;
+    font-weight: normal;
+    padding: 10px 5px;
+    margin-top: 10px;
+    border-radius: 12px;
+    padding-left: 15px;
+    letter-spacing: 1px;
+}
+</style>
+<div class='wrapper'>
+
+    <div class='section'>
+        🏛️ EMPRESAS
+    </div>
+
+    <div class='item'>
+        <div class='info'>
+            <div class='titulo'> MAIOR BRUTO</div>
+            <div class='nome black'>" & NomeTopGasto & "</div>
+        </div>
+        <div class='valor'>R$ " & FORMAT(ValorTopGasto, "#,##0") & "</div>
+    </div>
+
+   <div class='item'>
+        <div class='info'>
+            <div class='titulo'> MENOR BRUTO</div>
+            <div class='nome black'>" & NomeMenorGasto & "</div>
+        </div>
+        <div class='valor'>R$ " & FORMAT(ValorMenorGasto, "#,##0") & "</div>
+    </div>
+
+    <div class='item'>
+        <div class='info'>
+            <div class='titulo'> MAIOR QUANTIDADE DE FUNCIONÁRIOS</div>
+            <div class='nome black'>" & NomeTopFunc & "</div>
+        </div>
+        <div class='valor'>" & FORMAT(ValorTopFunc, "#,##0") & "</div>
+    </div>
+
+    <div class='item'>
+        <div class='info'>
+            <div class='titulo'> MAIOR CUSTO</div>
+            <div class='nome black'>" & NomeTopCUSTOS & "</div>
+        </div>
+        <div class='valor'>R$ " & FORMAT(ValorTopCUSTOS, "#,##0") & "</div>
+    </div>
+
+     <div class='item'>
+        <div class='info'>
+            <div class='titulo'> MAIOR VALOR DE ENCARGOS + BENEFICIOS</div>
+            <div class='nome black'>" & NomeTopEB & "</div>
+        </div>
+        <div class='valor'>R$ " & FORMAT(ValorTopEB, "#,##0") & "</div>
+    </div>
+
+     <div class='section'>
+        📅 MESES
+    </div>
+
+    <div class='item'>
+        <div class='info'>
+            <div class='titulo'> MAIOR BRUTO</div>
+            <div class='nome black'>" & NomeTopbrutomes & "</div>
+        </div>
+        <div class='valor'>R$ " & FORMAT(ValorTopbrutomes, "#,##0") & "</div>
+    </div>
+
+    <div class='item'>
+        <div class='info'>
+            <div class='titulo'> MENOR BRUTO</div>
+            <div class='nome black'>" & NomeMenorbrutomes & "</div>
+        </div>
+        <div class='valor'>R$ " & FORMAT(ValorMenorbrutomes, "#,##0") & "</div>
+    </div>
+
+    <div class='item'>
+        <div class='info'>
+            <div class='titulo'> MAIOR QUANTIDADE DE FUNCIONÁRIOS</div>
+            <div class='nome black'>" & NomeTopfuncimes & "</div>
+        </div>
+        <div class='valor'> " & FORMAT(ValorTopfuncimes, "#,##0") & "</div>
+    </div>
+
+    <div class='item'>
+        <div class='info'>
+            <div class='titulo'> MAIOR CUSTO</div>
+            <div class='nome black'>" & NomeTopcustosmes & "</div>
+        </div>
+        <div class='valor'>R$ " & FORMAT(ValorTopcustosmes, "#,##0") & "</div>
+    </div>
+
+    <div class='item'>
+        <div class='info'>
+            <div class='titulo'> MAIOR VALOR DE ENCARGOS + BENEFICIOS</div>
+            <div class='nome black'>" & NomeTopebm & "</div>
+        </div>
+        <div class='valor'>R$ " & FORMAT(ValorTopebm, "#,##0") & "</div>
+    </div>
+
+</div>
+
+</div>
+"

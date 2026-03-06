@@ -1,0 +1,133 @@
+HTML 4 = 
+VAR TabelaBase =
+    SUMMARIZE(
+        '@DADOS',
+        '@CALENDAR'[MES_ABREV],
+        '@CALENDAR'[NUMERO_MES],
+        "ValorMes", SUM('@DADOS'[SALARIO]) + SUM('@DADOS'[PJ])
+    )
+
+VAR MaxValor = MAXX(TabelaBase, [ValorMes])
+
+VAR TabelaComAltura =
+    ADDCOLUMNS(
+        TabelaBase,
+        "AlturaPx", DIVIDE([ValorMes], MaxValor) * 650
+    )
+
+VAR TabelaRank =
+    ADDCOLUMNS(
+        TabelaComAltura,
+        "Ordem", RANKX(TabelaComAltura, [NUMERO_MES], , ASC, DENSE)
+    )
+
+VAR TabelaFinal =
+    ADDCOLUMNS(
+        TabelaRank,
+        "PercCrescimento",
+            VAR Atual = [ValorMes]
+            VAR Ant = MAXX(FILTER(TabelaRank, [Ordem] = EARLIER([Ordem]) - 1), [ValorMes])
+            RETURN DIVIDE(Atual - Ant, Ant)
+    )
+
+VAR HTMLBarras =
+    CONCATENATEX(
+        TabelaFinal,
+        VAR Perc = [PercCrescimento]
+        VAR Cor = IF(Perc >= 0, "#34C759", "#FF3B30")
+        
+        VAR Indicador =
+            IF(
+                ISBLANK(Perc),
+                "",
+                "<div class='indicador-container'>
+                    <svg viewBox='0 0 100 500' preserveAspectRatio='xMidYMid meet' class='seta-svg'>
+                        " & IF(Perc >= 0, 
+                            "<rect x='25' y='60' width='50' height='400' fill='" & Cor & "' rx='6'/>
+                             <path d='M0 70 L50 0 L100 70 Z' fill='" & Cor & "' stroke-linejoin='round'/>",
+                            "<rect x='25' y='40' width='50' height='400' fill='" & Cor & "' rx='6'/>
+                             <path d='M0 430 L50 500 L100 430 Z' fill='" & Cor & "' stroke-linejoin='round'/>"
+                        ) & "
+                    </svg>
+                    <div class='perc' style='color:" & Cor & ";'>" & FORMAT(Perc,"0.0%") & "</div>
+                </div>"
+            )
+
+        RETURN
+        Indicador & "
+        <div class='coluna'>
+            <div class='valor'>R$ " & FORMAT([ValorMes], "#,##0") & "</div>
+            <div class='bar' style='height:" & FORMAT([AlturaPx], "0") & "px;'></div>
+            <div class='mes'>" & [MES_ABREV] & "</div>
+        </div>
+        ",
+        "",
+        [NUMERO_MES], ASC
+    )
+
+RETURN
+"
+<style>
+    .wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-family: 'Verdana', sans-serif;
+        padding: 60px 40px;
+        box-sizing: border-box;
+    }
+
+    .chart {
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        justify-content: space-around;
+        padding-bottom: 5px; 
+    }
+
+    .coluna {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        position: relative;
+    }
+
+    .bar {
+        width: 300px;
+        background: #1b1b1b;
+        border-radius: 20px 20px 20px 20px; 
+    }
+
+    .valor { font-size: 60px; font-weight: bold; margin-bottom: 20px; white-space: nowrap; }
+
+    .mes { 
+        font-size: 60px; 
+        font-weight: bold; 
+        margin-top: 30px; 
+        position: absolute;
+        top: 100%;
+    }
+
+    .indicador-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 200px; 
+        height: 600px; 
+        margin-bottom: 80px;
+    }
+
+    .seta-svg { width: 100%; height: 100%; }
+    .perc { font-size: 70px; font-weight: bold; margin-top: 10px; }
+</style>
+
+<div class='wrapper'>
+    <div class='chart'>
+        " & HTMLBarras & "
+    </div>
+</div>
+"

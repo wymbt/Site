@@ -1,10 +1,10 @@
 This is a raw files directory from a site. About it below:
 
-LUNARCORE
-BEYOND THE KNOWN...
+Lunarcore
+Beyond the known...
 
-ABOUT LUNARCORE
-LUNARCORE IS A GAMING STUDIO, MADE FOR EDUCATIONAL PURPOSES. WE CREATE GAMES NOT JUST TO PLAY, BUT TO FEEL, TO REMEMBER...
+About Lunarcore
+Lunarcore is a gaming studio, made for educational purposes. We create games not just to play, but to feel, to remember...
 
-ABOUT OUR GAMES
-WE MAKE GAMES OF TYPES SUCH AS INDIE, OPENWORLD, RPG, ADVENTURE, STRATEGY.
+Abour our games
+We make games of types such as indie, openworld, rpg, adventure, strategy.

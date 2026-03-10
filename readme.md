@@ -1,4 +1,4 @@
-<img width="1600" height="330" alt="lunarcore" src="https://github.com/user-attachments/assets/a0dc17cc-ffcf-4afd-a00f-ebbdaa53d125" />
+<img width="1566" height="330" alt="lunarcore" src="https://github.com/user-attachments/assets/139bc614-346d-4419-9347-74185b3dfe18" />
 # This is a raw files directory from a site. About it below:
 
 ## Lunarcore

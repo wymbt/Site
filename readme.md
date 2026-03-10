@@ -1,12 +1,12 @@
-#This is a raw files directory from a site. About it below:
+# This is a raw files directory from a site. About it below:
 
-#Lunarcore
+## Lunarcore
 Beyond the known...
 
-#About Lunarcore
+## About Lunarcore
 Lunarcore is a gaming studio, made for educational purposes. We create games not just to play, but to feel, to remember...
 
-#Abour our games
+## Abour our games
 We make games of types such as:
 * indie
 * openworld

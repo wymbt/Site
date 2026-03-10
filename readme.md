@@ -9,7 +9,7 @@ Beyond the known...
 ## About Lunarcore
 Lunarcore is a gaming studio, made for educational purposes. We create games not just to play, but to feel, to remember...
 
-## Abour our games
+## About our games
 We make games of types such as:
 * indie
 * openworld

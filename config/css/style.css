@@ -5,7 +5,7 @@
 }
 
 body {
-    background: radial-gradient(circle at top, #0c0c0c, #0f0f0f 85%);
+    background: radial-gradient(circle at top, #0c0c0c, #000000 90%);
     color: white;
     font-family: 'Press Start 2P', cursive;
     overflow-x: hidden;

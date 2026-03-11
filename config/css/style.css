@@ -11,6 +11,8 @@ body {
     overflow-x: hidden;
 }
 
+/* estrelas */
+
 .stars {
     position: fixed;
     width: 100%;
@@ -26,30 +28,37 @@ body {
     to { background-position: 1000px 1000px; }
 }
 
+/* header */
+
 header {
-    height: 50vh;
+    min-height: 40vh;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .logo {
-    font-size: 10rem;
-    letter-spacing: 10px;
+    font-size: clamp(3rem, 10vw, 10rem);
+    letter-spacing: clamp(2px, 1vw, 10px);
     text-shadow: 0 0 20px rgba(255,255,255,0.6);
 }
 
 .subtitle {
-    margin-top: 40px;
+    margin-top: 20px;
     color: #aaa;
+    font-size: clamp(0.6rem, 2vw, 0.9rem);
 }
 
-.card {
-    width: 80%;
-    max-width: 900px;
-    margin: 10px auto;
-    padding: 30px;
+/* cards */
+
+.card,
+.cardtitle {
+    width: min(90%, 900px);
+    margin: 15px auto;
+    padding: clamp(20px, 4vw, 30px);
     background: rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px;
@@ -59,20 +68,9 @@ header {
 }
 
 .cardtitle {
-    width: 80%;
-    max-width: 900px;
-    margin: 10px auto;
-    font-size: 2rem;
+    font-size: clamp(1rem, 3vw, 2rem);
     color: #00c2ff;
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    backdrop-filter: blur(6px);
-    text-align: center;
-    transition: 0.3s ease;
 }
-
 
 .card:hover {
     transform: translateY(-5px);
@@ -80,22 +78,25 @@ header {
 }
 
 .card h2 {
-    margin-bottom: 25px;
-    font-size: 1rem;
+    margin-bottom: 20px;
+    font-size: clamp(0.7rem, 2vw, 1rem);
 }
 
 .card p {
-    font-size: 0.8rem;
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
     line-height: 1.6rem;
     color: #ccc;
 }
 
+/* jogos */
+
 .game-grid {
-    margin-top: -100px;
+    margin-top: -60px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: clamp(10px, 3vw, 20px);
     flex-wrap: wrap;
+    padding: 20px;
 }
 
 .game-item {
@@ -103,8 +104,8 @@ header {
 }
 
 .game-icon {
-    width: 80px;
-    height: 80px;
+    width: clamp(60px, 10vw, 80px);
+    height: clamp(60px, 10vw, 80px);
     margin: 0 auto 10px auto;
     overflow: hidden;
 }
@@ -115,10 +116,25 @@ header {
     object-fit: cover;
 }
 
+/* footer */
+
 footer {
     text-align: center;
-    padding: 40px;
-    font-size: 0.6rem;
+    padding: 40px 20px;
+    font-size: clamp(0.5rem, 1.5vw, 0.6rem);
     color: #777;
 }
 
+/* mobile extra */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 60px 20px;
+    }
+
+    .game-grid {
+        margin-top: -20px;
+    }
+
+}

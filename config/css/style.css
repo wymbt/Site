@@ -66,7 +66,7 @@ header {
 
 
 .asset-grid{
-    width: min(95%, 1200px);
+    width: min(95%, 800px);
     margin: 20px auto;
     display: grid;
     grid-template-columns: repeat(4,1fr);

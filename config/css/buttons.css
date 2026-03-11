@@ -1,13 +1,14 @@
- .menu-btn {
+.menu-btn {
     display: block;
-    width: 300px;
+    width: min(90%, 300px);
     margin: 15px auto;
     padding: 15px 0;
     background-color: #4b4f56;
     color: white;
     text-decoration: none;
     text-align: center;
-    font-size: 0.8rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
     letter-spacing: 2px;
     transition: 0.2s ease;
 }
@@ -21,18 +22,17 @@
     transform: scale(0.98);
 }
 
-
 .asset-btn {
     display: block;
-    width: 100%;
-    max-width: 400px;
+    width: min(90%, 400px);
     margin: 20px auto;
     padding: 20px 0;
     background-color: #3f444c;
     color: white;
     text-decoration: none;
     text-align: center;
-    font-size: 0.8rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
     letter-spacing: 2px;
     transition: 0.2s ease;
 }

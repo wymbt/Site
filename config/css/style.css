@@ -63,7 +63,7 @@ header {
 
 .cardtitle {
     font-size: clamp(1rem, 3vw, 2rem);
-    color: #00c2ff;
+    color: #bababa;
 }
 
 .card:hover {

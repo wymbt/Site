@@ -27,7 +27,7 @@ body {
 }
 
 header {
-    min-height: 26vh;
+    min-height: 22vh;
     padding: 10px 10px;
     display: flex;
     flex-direction: column;

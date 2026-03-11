@@ -28,7 +28,7 @@ body {
 
 header {
     min-height: 22vh;
-    padding: 10px 10px;
+    padding: 50px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;

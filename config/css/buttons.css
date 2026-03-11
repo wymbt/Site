@@ -3,7 +3,7 @@
     width: min(90%, 300px);
     margin: 15px auto;
     padding: 15px 0;
-    background-color: #4b4f56;
+    background-color: #1f1f1f;
     color: white;
     text-decoration: none;
     text-align: center;
@@ -14,7 +14,7 @@
 }
 
 .menu-btn:hover {
-    background-color: #6b7078;
+    background-color: #1f1f1f;
     transform: scale(1.03);
 }
 
@@ -27,7 +27,7 @@
     width: min(90%, 400px);
     margin: 20px auto;
     padding: 20px 0;
-    background-color: #3f444c;
+    background-color: #1f1f1f;
     color: white;
     text-decoration: none;
     text-align: center;
@@ -38,5 +38,5 @@
 }
 
 .asset-btn:hover {
-    background-color: #5a606a;
+    background-color: #1f1f1f;
 }

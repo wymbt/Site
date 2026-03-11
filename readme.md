@@ -11,9 +11,8 @@ Lunarcore is a gaming studio, made for educational purposes. We create games not
 
 ## About our games
 We make games of types such as:
-* indie
-* openworld
-* rpg
-
-* adventure
-* strategy
+* Indie
+* Openworld
+* Rpg
+* Adventure
+* Strategy

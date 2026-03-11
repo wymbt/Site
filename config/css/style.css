@@ -48,11 +48,34 @@ header {
     font-size: clamp(0.6rem, 2vw, 0.9rem);
 }
 
-.card,
+
 .cardtitle {
-    width: min(90%, 900px);
-    margin: 15px auto;
-    padding: clamp(20px, 4vw, 30px);
+    width: min(95%, 1200px);
+    margin: 40px auto 10px auto;
+    padding: 20px;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    backdrop-filter: blur(6px);
+    text-align: center;
+}
+
+.cardtitle h2{
+    font-size: clamp(0.9rem,2vw,1.2rem);
+}
+
+
+.asset-grid{
+    width: min(95%, 1200px);
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+
+.card{
+    padding: 25px 15px;
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 5px;
@@ -61,52 +84,16 @@ header {
     transition: 0.3s ease;
 }
 
-.cardtitle {
-    font-size: clamp(1rem, 3vw, 2rem);
-    color: white;
-}
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 40px rgba(186, 186, 186, 0.15);
 }
 
-.card h2 {
+.card h2{
+    font-size: clamp(0.6rem,1.5vw,0.7rem);
     margin-bottom: 20px;
-    font-size: clamp(0.7rem, 2vw, 1rem);
 }
 
-.card p {
-    font-size: clamp(0.6rem, 2vw, 0.8rem);
-    line-height: 1.6rem;
-    color: #ccc;
-}
-
-.game-grid {
-    margin-top: -60px;
-    display: flex;
-    justify-content: center;
-    gap: clamp(10px, 3vw, 20px);
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-.game-item {
-    text-align: center;
-}
-
-.game-icon {
-    width: clamp(60px, 10vw, 80px);
-    height: clamp(60px, 10vw, 80px);
-    margin: 0 auto 10px auto;
-    overflow: hidden;
-}
-
-.game-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 footer {
     text-align: center;
@@ -115,14 +102,19 @@ footer {
     color: #777;
 }
 
-@media (max-width: 450px) {
 
-    header {
-        padding: 80px 20px;
+@media (max-width:1000px){
+
+    .asset-grid{
+        grid-template-columns: repeat(2,1fr);
     }
 
-    .game-grid {
-        margin-top: -20px;
+}
+
+@media (max-width:500px){
+
+    .asset-grid{
+        grid-template-columns: 1fr;
     }
 
 }

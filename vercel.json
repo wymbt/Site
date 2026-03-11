@@ -1,9 +1,6 @@
 {
-  "redirects": [
-    {
-      "source": "/index.html",
-      "destination": "/",
-      "permanent": true
-    }
+  "rewrites": [
+    { "source": "/assets", "destination": "/assets.html" },
+    { "source": "/games", "destination": "/games.html" }
   ]
 }

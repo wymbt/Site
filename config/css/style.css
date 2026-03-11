@@ -115,10 +115,10 @@ footer {
     color: #777;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
 
     header {
-        padding: 60px 20px;
+        padding: 80px 20px;
     }
 
     .game-grid {

@@ -97,6 +97,14 @@ header {
     box-shadow: 0 0 40px rgba(186, 186, 186, 0.15);
 }
 
+.card p{
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
+    line-height: 2rem;
+    letter-spacing: 1px;
+    color: #ccc;
+    margin-top: 15px;
+}
+
 .card h2{
     margin-bottom: 20px;
     font-size: clamp(0.7rem, 2vw, 1rem);

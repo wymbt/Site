@@ -57,7 +57,7 @@ header {
 
 
 .cardtitle {
-    width: min(95%, 900px);
+    width: min(95%, 1200px);
     margin: 40px auto 10px auto;
     padding: 25px;
     background: rgba(0,0,0,0.4);
@@ -87,7 +87,7 @@ header {
 
 
 .card{
-    width: min(95%, 900px);
+    width: min(95%, 1200px);
     margin: 15px auto;
 
     padding: 25px;

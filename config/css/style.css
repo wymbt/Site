@@ -73,13 +73,16 @@ header {
 
 
 .asset-grid{
-    width: min(95%, 900px);
+    width: fit-content;
+    max-width: 95%;
+
     margin: 20px auto;
 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5px;
+
+    gap: 7px;
 }
 
 

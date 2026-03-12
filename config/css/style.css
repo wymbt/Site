@@ -75,7 +75,7 @@ header {
 
 
 .card{
-    width: min(90%, 800px);
+    width: min(90%, 900px);
     margin: 15px auto;
 
     padding: 25px 20px;
@@ -89,6 +89,18 @@ header {
     text-align: center;
 
     transition: 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.asset-grid .card{
+    min-height: 180px;
+}
+
+.card a{
+    margin-top: auto;
 }
 
 

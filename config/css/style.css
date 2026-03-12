@@ -60,15 +60,11 @@ header {
     width: min(95%, 1400px);
     margin: 40px auto 10px auto;
     padding: 25px;
-    background: rgba(0,0,0,0.4);
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 5px;
-    backdrop-filter: blur(6px);
     text-align: center;
 }
 
 .cardtitle h2{
-    font-size: clamp(0.9rem,2vw,1.2rem);
+    font-size: clamp(1.5rem,2vw,1.2rem);
 }
 
 

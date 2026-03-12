@@ -98,8 +98,9 @@ header {
 }
 
 .card h2{
-    font-size: clamp(0.6rem,1.5vw,0.7rem);
     margin-bottom: 20px;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    letter-spacing: 2px;
 }
 
 

@@ -75,10 +75,10 @@ header {
 
 
 .card{
-    width: min(90%, 900px);
+    width: min(90%, 800px);
     margin: 15px auto;
 
-    padding: 35px 35px;
+    padding: 35px 45px;
 
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255,255,255,0.1);
@@ -120,7 +120,7 @@ header {
 .card h2{
     margin-bottom: 20px;
     font-size: clamp(0.7rem, 2vw, 1rem);
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 

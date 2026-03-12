@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    { "source": "/index", "destination": "/home", "permanent": true },
+    { "source": "/index.html", "destination": "/home", "permanent": true }
+    { "source": "/index2", "destination": "/assets", "permanent": true },
+    { "source": "/index2.html", "destination": "/assets", "permanent": true }
+  ],
+
   "rewrites": [
     { "source": "/assets", "destination": "/index2.html" },
     { "source": "/home", "destination": "/index.html" }

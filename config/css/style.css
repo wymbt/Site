@@ -66,7 +66,7 @@ header {
 
 
 .asset-grid{
-    width: min(95%, 800px);
+    width: min(95%, 900px);
     margin: 20px auto;
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -75,7 +75,7 @@ header {
 
 
 .card{
-    width: min(95%, 800px);
+    width: min(95%, 900px);
     margin: 15px auto;
 
     padding: 25px 25px;
@@ -96,7 +96,7 @@ header {
 }
 
 .asset-grid .card{
-    min-height: 180px;
+    min-height: 150px;
 }
 
 .card a{

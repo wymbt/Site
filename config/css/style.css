@@ -78,7 +78,7 @@ header {
     width: min(95%, 800px);
     margin: 15px auto;
 
-    padding: 35px 20px;
+    padding: 35px 15px;
 
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255,255,255,0.1);
@@ -111,8 +111,8 @@ header {
 
 .card p{
     font-size: clamp(0.6rem, 2vw, 0.8rem);
-    line-height: 2rem;
-    letter-spacing: 1px;
+    line-height: 3rem;
+    letter-spacing: 3px;
     color: #ccc;
     margin-top: 15px;
 }

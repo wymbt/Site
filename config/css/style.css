@@ -66,11 +66,11 @@ header {
 
 
 .asset-grid{
-    width: min(95%, 900px);
+    width: min(100%, 900px);
     margin: 20px auto;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 10px;
+    gap: 5px;
 }
 
 

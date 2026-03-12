@@ -50,7 +50,7 @@ header {
 
 
 .cardtitle {
-    width: min(95%, 800px);
+    width: min(95%, 900px);
     margin: 40px auto 10px auto;
     padding: 20px;
     background: rgba(0,0,0,0.4);

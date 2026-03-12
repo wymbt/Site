@@ -124,7 +124,7 @@ header {
 
 .card p{
     font-size: clamp(0.6rem, 2vw, 0.8rem);
-    line-height: 3rem;
+    line-height: 1rem;
     letter-spacing: 2px;
     color: #ccc;
     margin-top: 15px;
@@ -134,7 +134,7 @@ header {
     margin-bottom: 10px;
     font-size: clamp(0.7rem, 2vw, 1rem);
     letter-spacing: 3px;
-    line-height: 2rem;
+    line-height: 1rem;
 }
 
 

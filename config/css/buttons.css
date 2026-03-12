@@ -36,7 +36,7 @@
     text-decoration: none;
     text-align: center;
     font-family: 'Press Start 2P', cursive;
-    font-size: clamp(0.6rem, 2vw, 0.8rem);
+    font-size: clamp(0.5rem, 2vw, 0.8rem);
     letter-spacing: 2px;
     transition: 0.2s ease;
 }

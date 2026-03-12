@@ -75,14 +75,22 @@ header {
 
 
 .card{
-    padding: 15px 5px;
+    width: min(90%, 800px);
+    margin: 15px auto;
+
+    padding: 25px 20px;
+
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 5px;
+
     backdrop-filter: blur(6px);
+
     text-align: center;
+
     transition: 0.3s ease;
 }
+
 
 .card:hover {
     transform: translateY(-5px);

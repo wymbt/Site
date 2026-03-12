@@ -52,7 +52,7 @@ header {
 .cardtitle {
     width: min(95%, 900px);
     margin: 40px auto 10px auto;
-    padding: 20px;
+    padding: 25px;
     background: rgba(0,0,0,0.4);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 5px;
@@ -78,7 +78,7 @@ header {
     width: min(95%, 900px);
     margin: 15px auto;
 
-    padding: 25px 25px;
+    padding: 25px;
 
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255,255,255,0.1);
@@ -118,7 +118,7 @@ header {
 }
 
 .card h2{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: clamp(0.7rem, 2vw, 1rem);
     letter-spacing: 3px;
 }

@@ -10,6 +10,8 @@ body {
     font-family: 'Press Start 2P', cursive;
 
     min-height: 100vh;
+    max-width: 900px;
+    margin: 0 auto;
     overflow-x: hidden;
 }
 

@@ -118,17 +118,21 @@ header {
 .card::before {
     top: 0;
     left: 0;
-    box-shadow:
-        0 0 6px rgba(255,255,255,0.6),
-        0 calc(100% - 12px) #fff;
 }
 
 .card::after {
     top: 0;
     right: 0;
-    box-shadow:
-        0 0 6px rgba(255,255,255,0.6),
-        0 calc(100% - 12px) #fff;
+}
+
+.card::before {
+    bottom: 0;
+    left: 0;
+}
+
+.card::after {
+    bottom: 0;
+    right: 0;
 }
 
 .asset-grid .card{

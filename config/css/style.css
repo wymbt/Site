@@ -90,42 +90,46 @@ header {
 
 
 .card {
-  position: relative;
+    width: min(95%, 1400px);
+    margin: 15px auto;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 5px;
+    backdrop-filter: blur(6px);
+    text-align: center;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
 }
 
 .card::before,
 .card::after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: #fff;
-  box-shadow: 0 0 6px rgba(255,255,255,0.6);
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    box-shadow: 0 0 6px rgba(255,255,255,0.6);
 }
 
 .card::before {
-  top: 6px;
-  left: 6px;
+    top: 8px;
+    left: 8px;
+    box-shadow:
+        0 0 6px rgba(255,255,255,0.6),
+        0 calc(100% - 16px) #fff;
 }
 
 .card::after {
-  top: 6px;
-  right: 6px;
+    top: 8px;
+    right: 8px;
+    box-shadow:
+        0 0 6px rgba(255,255,255,0.6),
+        0 calc(100% - 16px) #fff;
 }
-
-.card::before,
-.card::after {
-  border-radius: 2px;
-}
-
-.card::before {
-  box-shadow:
-    0 0 6px rgba(255,255,255,0.6),
-    calc(100% - 18px) 0 #fff,
-    calc(100% - 18px) calc(100% - 18px) #fff,
-    0 calc(100% - 18px) #fff;
-}
-
 
 .asset-grid .card{
     flex: 0 0 220px;

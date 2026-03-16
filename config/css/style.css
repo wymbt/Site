@@ -120,7 +120,7 @@ header {
     left: 0;
     box-shadow:
         0 0 6px rgba(255,255,255,0.6),
-        0 calc(100% - 12px) #000;
+        0 calc(100% - 12px) #fff;
 }
 
 .card::after {
@@ -128,7 +128,7 @@ header {
     right: 0;
     box-shadow:
         0 0 6px rgba(255,255,255,0.6),
-        0 calc(100% - 12px) #000;
+        0 calc(100% - 12px) #fff;
 }
 
 .asset-grid .card{

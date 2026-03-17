@@ -115,23 +115,23 @@ header {
 }
 
 .card::before {
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
 }
 
 .card::after {
-    top: 0;
-    right: 0;
+    top: 0px;
+    right: 0px;
 }
 
 .card::before {
-    bottom: 50;
-    left: 50;
+    bottom: 50px;
+    left: 50px;
 }
 
 .card::after {
-    bottom: 50;
-    right: 50;
+    bottom: 50px;
+    right: 50px;
 }
 
 .asset-grid .card{

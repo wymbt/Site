@@ -112,7 +112,6 @@ header {
     width: 12px;
     height: 12px;
     border: 1px solid #fff;
-    box-shadow: 0 0 6px rgba(255,255,255,0.6);
 }
 
 .card::before {
@@ -126,13 +125,13 @@ header {
 }
 
 .card::before {
-    bottom: 5;
-    left: 5;
+    bottom: 50;
+    left: 50;
 }
 
 .card::after {
-    bottom: 5;
-    right: 5;
+    bottom: 50;
+    right: 50;
 }
 
 .asset-grid .card{

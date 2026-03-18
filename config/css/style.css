@@ -144,67 +144,20 @@ footer {
 .glitch-wrap {
   position: relative;
   display: inline-block;
+  overflow: hidden;
 }
 
-.glitch {
-  display: block;
-  position: relative;
-  animation: flicker 2s infinite;
-}
-
-.glitch::before,
-.glitch::after {
-  content: "";
+.glitch-block {
   position: absolute;
-  inset: 0;
-  background: url('404.png') no-repeat center;
-  background-size: contain;
-  opacity: 0.5;
+  background: white;
+  opacity: 0.15;
+  pointer-events: none;
+  animation: fadeOut 0.6s ease forwards;
 }
 
-.glitch::before {
-  transform: translate(2px, 0);
-  filter: drop-shadow(-2px 0 red);
-  animation: glitchShift 2s infinite;
-}
-
-.glitch::after {
-  transform: translate(-2px, 0);
-  filter: drop-shadow(2px 0 cyan);
-  animation: glitchShift 2s infinite reverse;
-}
-
-.glitch-wrap::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    transparent 70%,
-    rgba(255,255,255,0.08) 70%
-  );
-  background-size: 100% 6px;
-  opacity: 0.3;
-  animation: scan 4s linear infinite;
-}
-
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  48% { opacity: 0.9; }
-  50% { opacity: 0.6; }
-  52% { opacity: 0.95; }
-}
-
-@keyframes glitchShift {
-  0%, 100% { transform: translate(0, 0); }
-  20% { transform: translate(2px, 0); }
-  40% { transform: translate(-2px, 0); }
-  60% { transform: translate(1px, 0); }
-  80% { transform: translate(-1px, 0); }
-}
-
-@keyframes scan {
-  0% { background-position: 0 -100%; }
-  100% { background-position: 0 100%; }
+@keyframes fadeOut {
+  0% { opacity: 0.4; }
+  100% { opacity: 0; }
 }
 
 @media (max-width:500px){

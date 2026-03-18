@@ -36,7 +36,7 @@ body {
 
 
 header {
-    min-height: 22vh;
+    min-height: 5vh;
     padding: 50px 20px;
     display: flex;
     flex-direction: column;

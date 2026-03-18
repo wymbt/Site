@@ -1,18 +1,9 @@
-# LUNARCORE - https://lunarcore.vercel.app/
-<img width="1566" height="330" alt="lunarcore" src="https://github.com/user-attachments/assets/139bc614-346d-4419-9347-74185b3dfe18" />
+# 404 - https://404dev.vercel.app/
 
-## This is a raw files directory from a site. About it below:
+## THIS IS A RAW FILES DIRECTORY FROM A SITE. ABOUT IT BELOW:
 
-## Lunarcore
-Beyond the known...
-
-## About Lunarcore
-Lunarcore is a gaming studio, made for educational purposes. We create games not just to play, but to feel, to remember...
-
-## About our games
-We make games of types such as:
-* Indie
-* Openworld
-* Rpg
-* Adventure
-* Strategy
+## ABOUT 404
+404 IS A GAMING STUDIO, MADE FOR FUN AND BECAUSE WE CAN🤣.
+WE CREATE GAMES JUST BECAUSE WE WANT🤠 (AND MAYBE BECAUSE LIFE IS GOOD?)
+## ABOUT OUR GAMES
+WE MAKE GAMES OF TYPES SUCH AS INDIE, OPENWORLD, RPG, ADVENTURE, STRATEGY. AND ANY OF THEM HAVE A LOT OF EASTEREGGS😏 (MAYBE SOMETIMES MEMES)

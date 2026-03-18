@@ -157,8 +157,8 @@ footer {
 }
 
 @keyframes fadeOut {
-  0% { opacity: 0.4; }
-  100% { opacity: 0; }
+  0% { transform: scale(1); }
+  100% { transform: scale(0.95); }
 }
 
 @media (max-width:500px){

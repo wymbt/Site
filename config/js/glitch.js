@@ -18,10 +18,9 @@ function createBlock() {
   wrap.appendChild(block);
 
   setTimeout(() => {
-    block.remove();
-  }, 600);
-}
-
+  block.remove();
+}, 200);
+  
 setInterval(() => {
   for (let i = 0; i < 10; i++) {
     createBlock();

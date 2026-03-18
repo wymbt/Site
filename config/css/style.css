@@ -36,13 +36,12 @@ body {
 
 
 header {
+    position: relative;
     min-height: 5vh;
     padding: 50px 20px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 .logo {
@@ -52,9 +51,15 @@ header {
 }
 
 .subtitle {
-    margin-top: -120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    
     color: #aaa;
     font-size: clamp(0.6rem, 2vw, 0.9rem);
+    
+    z-index: 2;
 }
 
 

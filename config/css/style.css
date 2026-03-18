@@ -131,6 +131,14 @@ header {
     margin-top: 15px;
 }
 
+.card f{
+    font-size: clamp(0.4rem, 2vw, 0.8rem);
+    line-height: 1rem;
+    letter-spacing: 2px;
+    color: #aaa;
+    margin-top: 15px;
+}
+
 .card h2{
     margin-bottom: 10px;
     font-size: clamp(0.7rem, 2vw, 1rem);

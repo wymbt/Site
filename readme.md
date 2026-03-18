@@ -1,5 +1,5 @@
 # 404 - https://404dev.vercel.app/
-<img width="100" height="67" alt="logoicon" src="https://github.com/user-attachments/assets/9f9b3567-ff1b-46c1-abca-50fc761c2f58" />
+<img width="500" height="333" alt="logo" src="https://github.com/user-attachments/assets/ce75c747-85c8-409f-b77a-fb06ddbdda07" />
 
 ## THIS IS A RAW FILES DIRECTORY FROM A SITE. ABOUT IT BELOW:
 

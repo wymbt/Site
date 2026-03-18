@@ -4,8 +4,8 @@ function createBlock() {
   const block = document.createElement("div");
   block.classList.add("glitch-block");
 
-  const sizeW = Math.random() * 80 + 20; // largura
-  const sizeH = Math.random() * 30 + 10; // altura
+  const sizeW = Math.random() * 30 + 5;
+  const sizeH = Math.random() * 15 + 3;
 
   block.style.width = sizeW + "px";
   block.style.height = sizeH + "px";
@@ -22,9 +22,8 @@ function createBlock() {
   }, 600);
 }
 
-/* frequência dos glitches */
 setInterval(() => {
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 10; i++) {
     createBlock();
   }
-}, 150);
+}, 100);

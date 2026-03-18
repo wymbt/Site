@@ -153,7 +153,7 @@ footer {
   opacity: 1;
   pointer-events: none;
   animation: fadeOut 0.6s ease forwards;
-  mix-blend-mode: overlay;
+  mix-blend-mode: multiply;
 }
 
 @keyframes fadeOut {

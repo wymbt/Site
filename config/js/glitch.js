@@ -4,7 +4,7 @@ function createBlock() {
   const block = document.createElement("div");
   block.classList.add("glitch-block");
 
-  const sizeW = Math.random() * 10 + 5;
+  const sizeW = Math.random() * 30 + 5;
   const sizeH = Math.random() * 15 + 3;
 
   block.style.width = sizeW + "px";

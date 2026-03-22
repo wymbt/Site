@@ -154,21 +154,6 @@ footer {
     color: #777;
 }
 
-.glitch-wrap {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-}
-
-.glitch-block {
-  position: absolute;
-  background: white;
-  opacity: 1;
-  pointer-events: none;
-  animation: fadeOut 0.6s ease forwards;
-  mix-blend-mode: multiply;
-}
-
 @keyframes fadeOut {
   0% { transform: scale(1); }
   100% { transform: scale(0.95); }

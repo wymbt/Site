@@ -33,8 +33,6 @@ footer {
     width: min(95%, 1400px);
     margin: 15px auto;
     padding: 25px;
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255,255,255,0.3);
     backdrop-filter: blur(6px);
     text-align: center;
     transition: 0.3s ease;

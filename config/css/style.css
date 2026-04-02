@@ -1,40 +1,18 @@
+/* BODY */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     background: radial-gradient(circle at top, #0c0c0c, #000000 80%);
-    color: white;
-    font-family: 'Press Start 2P', cursive;
-
     min-height: 100vh;
     max-width: 900px;
+    color: white;
     margin: 0 auto;
     overflow-x: hidden;
+    font-family: 'Press Start 2P', cursive;
 }
-
-.stars {
-    position: fixed;
-    inset: -50%;
-    width: 200%;
-    height: 200%;
-
-    background: url("https://www.transparenttextures.com/patterns/stardust.png");
-
-    opacity: 0.6;
-    z-index: -1;
-
-    animation: starsMove 200s linear infinite;
-}
-
-@keyframes starsMove {
-    from { background-position: 0 0; }
-    to { background-position: 1000px 1000px; }
-}
-
-
 header {
     position: relative;
     min-height: 5vh;
@@ -43,27 +21,29 @@ header {
     justify-content: center;
     align-items: center;
 }
+footer {
+    text-align: center;
+    padding: 70px 20px;
+    font-size: clamp(0.5rem, 1.5vw, 0.6rem);
+    color: #777;
+}
 
-.logo {
-    font-size: clamp(1.7rem, 9vw, 8rem);
+/* STYLE */
+.title {
+    font-size: clamp(1.4rem, 9vw, 8rem);
     letter-spacing: clamp(2px, 1vw, 10px);
     text-shadow: 0 0 20px rgba(255,255,255,0.6);
 }
-
 .subtitle {
     position: absolute;
     top: 70%;
     left: 50%;
     transform: translate(-50%, -30%);
-    
     color: #aaa;
-    font-size: clamp(0.6rem, 2vw, 0.9rem);
-    
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
     z-index: 2;
 }
-
-
-.cardtitle {
+.section-title {
     width: min(95%, 1400px);
     margin: 40px auto 10px auto;
     padding: 25px;
@@ -72,27 +52,19 @@ header {
     backdrop-filter: blur(6px);
     text-align: center;
 }
-
-.cardtitle h2{
+.section-title_subtitle{
     font-size: clamp(1.8rem,2vw,1.2rem);
     text-shadow: 0 0 20px rgba(255,255,255,0.6);
 }
-
-
-.asset-grid{
+.container{
     width: fit-content;
     max-width: 95%;
-
     margin: 20px auto;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
     gap: 7px;
 }
-
-
 .card {
     width: min(95%, 1400px);
     margin: 15px auto;
@@ -107,70 +79,60 @@ header {
     justify-content: space-between;
     position: relative;
 }
-
-.asset-grid .card{
-    flex: 0 0 220px;
-}
-
-
-.card a{
-    margin-top: auto;
-}
-
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 40px rgba(186, 186, 186, 0.15);
 }
-
-.card p{
+.card-1{
     font-size: clamp(0.6rem, 2vw, 0.8rem);
     line-height: 1rem;
     letter-spacing: 2px;
     color: #ccc;
     margin-top: 15px;
 }
-
-.card f{
+.card-2{
     font-size: clamp(0.2rem, 2vw, 0.8rem);
     line-height: 1rem;
     letter-spacing: 2px;
     color: #aaa;
     margin-top: 15px;
 }
-
-.card h2{
+.card-3{
     margin-bottom: 10px;
     font-size: clamp(0.7rem, 2vw, 1rem);
     letter-spacing: 3px;
     line-height: 1rem;
 }
 
-
-footer {
-    text-align: center;
-    padding: 70px 20px;
-    font-size: clamp(0.5rem, 1.5vw, 0.6rem);
-    color: #777;
-}
-
+/* ANIMATION */
 @keyframes fadeOut {
   0% { transform: scale(1); }
   100% { transform: scale(0.95); }
 }
+.stars {
+    position: fixed;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background: url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity: 0.6;
+    z-index: -1;
+    animation: starsMove 200s linear infinite;
+}
+@keyframes starsMove {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+}
 
+
+/* MOBILE */
 @media (max-width:500px){
-
     .asset-grid{
         grid-template-columns: repeat(2,1fr);
     }
-
 }
-
 @media (max-width:500px){
-
     .asset-grid{
         grid-template-columns: 1fr;
     }
-
 }
